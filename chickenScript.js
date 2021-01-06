@@ -242,7 +242,7 @@ function updateLenDay() {
 
 function addEggImg(i) {
 	var newEgg = document.createElement("img");
-	newEgg.src = "Images/whiteEgg.png";
+	newEgg.src = "Images/WhiteEgg.png";
 	var eggId = "egg_" + i;
 	newEgg.id = eggId;
 
