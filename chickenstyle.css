@@ -1,0 +1,40 @@
+
+.chicken_menu {
+	width:25%;
+	height:100%;
+	position:fixed;
+	z-index:1;
+	padding-left:20px;
+
+}
+
+
+.right_content {
+	position: relative;
+	margin-left:25%;
+}
+
+#div_eggs {
+	float: left;
+	position: absolute;
+	left:20px;
+	top:20px;
+
+	width:500px;
+	height:360px;
+
+	z-index:1000;
+	padding:5px;
+
+}
+
+#div_chickens {
+	float: left;
+	position: absolute;
+	left:20px;
+	top:20px;
+	
+	z-index:0;
+
+}
+
