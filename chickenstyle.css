@@ -14,6 +14,10 @@
 	margin-left:25%;
 }
 
+.testing_content {
+	visibility: hidden;
+}
+
 #div_eggs {
 	float: left;
 	position: absolute;

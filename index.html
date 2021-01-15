@@ -12,12 +12,14 @@
 
 <div class="chicken_menu">
 	<h1>Nestbox Simulator</h1>
-	<h2 id="clock">Real Time:</h2>
-	<h2 id="game_clock">In-Game Time:</h2>
-	<h2 id="txt_len_day">Length of Day in Mins:1440 (24 hrs)</h2>
-	<h2>Set Length of Day (Mins):</h2><input id="input_len_day" type="number"><button id="btn_len_day" onclick="updateLenDay()">Update</button>
+	<h2 id="clock">Time:</h2>
 	<h2 id="txt_chicken_count">You have 1 chicken.</h2>
 	<h2 id="txt_egg_count">You have collected 0 eggs.</h2>
+	<button id="btn_reset" onclick="reset()">Reset</button>
+	<h2 id="game_clock" class="testing_content">In-Game Time:</h2>
+	<h2 id="txt_len_day" class="testing_content">Length of Day in Mins:1440 (24 hrs)</h2>
+	<h2 class="testing_content">Set Length of Day (Mins):</h2><input class="testing_content" id="input_len_day" type="number"><button class="testing_content" id="btn_len_day" onclick="updateLenDay()">Update</button>
+
 	<!--
 	<button id="btn_egg" onclick="genEgg()">Generate Egg</button>
 	-->

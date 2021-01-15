@@ -81,7 +81,7 @@ function showTime() {
 		hour = 12
 	}
 
-	document.getElementById("clock").innerHTML = "Real Time: " + hour + ":" + min + ":" + sec + " " + am_pm;
+	document.getElementById("clock").innerHTML = "Time: " + hour + ":" + min + ":" + sec + " " + am_pm;
 
 	var inGameTimeSection = currentTime % lenDay
 	var inGameTimeHr = Math.floor(inGameTimeSection / (lenDay/24))
@@ -200,7 +200,7 @@ function checkTime() {
 		hour = 12
 	}
 
-	document.getElementById("clock").innerHTML = "Real Time: " + hour + ":" + min + ":" + sec + " " + am_pm;
+	document.getElementById("clock").innerHTML = "Time: " + hour + ":" + min + ":" + sec + " " + am_pm;
 
 	var inGameTimeSection = currentTime % lenDay
 	var inGameTimeHr = Math.floor(inGameTimeSection / (lenDay/24))
@@ -326,6 +326,26 @@ function getCookie(cname) {
 }
 
 
+// Reset everything
+
+function reset() {
+	document.cookie = "egg_count=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	document.cookie = "chicken_name=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	document.cookie = "egg_positions=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	document.cookie = "egg_lay_time=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	document.cookie = "time_egg_set=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+	document.cookie = "len_day=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
+	eggCount = checkEggCount();
+	eggPositions = checkEggPositions();
+	eggBinFull = !eggPositions.includes(0);
+	eggLayTime = checkEggLayTime();
+	timeEggLayWasSet = checkTimeEggLayWasSet();
+	lenDay = checkLenDay();
+	checkChickenName();
+	checkTime();
+}
+
 //Cookie Checks
 
 function checkEggCount() {
@@ -345,7 +365,7 @@ function checkEggCount() {
 function checkChickenName() {
 	var name = getCookie("chicken_name");
 	if (name == "") {
-		name = prompt("Please enter a name for your first chicken:", "");
+		name = prompt("Please enter a name for your chicken:", "");
 		if (name != "" && name != null) {
 			setCookie("chicken_name", name, 365);
 		}
@@ -353,7 +373,7 @@ function checkChickenName() {
 			name = "Chicken";
 		}
 	}
-	document.getElementById("txt_chicken_count").innerHTML = "You have 1 chicken named " + name + ".";
+	document.getElementById("txt_chicken_count").innerHTML = "Chicken Name: " + name;
 } 
 
 function checkEggPositions() {
@@ -375,6 +395,7 @@ function checkEggPositions() {
 		return posArray;
 	}
 }
+
 
 function checkEggLayTime() {
 	var cookieEggLayTime = getCookie("egg_lay_time");
